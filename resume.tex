@@ -1,44 +1,12 @@
 \documentclass[margin=2cm,line]{res}
+\usepackage{pgffor}
 \usepackage[margin=2cm]{geometry}
 
 \textheight = 10.75 in \topmargin = -.5 in \oddsidemargin -.6in
 \evensidemargin -.25in \textwidth=6.15in \itemsep=0in
 \parsep=0in
 
-\newenvironment{list1}{
-  \begin{list}{\ding{113}}{%
-      \setlength{\itemsep}{0in}
-      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
-      \setlength{\topsep}{0in} \setlength{\partopsep}{0in}
-      \setlength{\leftmargin}{0.17in}}}{\end{list}}
-\newenvironment{list2}{
-  \begin{list}{$\bullet$}{%
-      \setlength{\itemsep}{0in}
-      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
-      \setlength{\topsep}{0in} \setlength{\partopsep}{0in}
-      \setlength{\leftmargin}{0.2in}}}{\end{list}}
-\newenvironment{list3}{
-  \begin{list}{}{%
-      \setlength{\itemsep}{0in}
-      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
-      \setlength{\topsep}{0in} \setlength{\partopsep}{0in}
-      \setlength{\leftmargin}{0.2in}}}{\end{list}}
-\newenvironment{list4}{
-  \begin{list}{$\bullet$}{%
-      \setlength{\itemsep}{0in}
-      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
-      \setlength{\topsep}{0in} \setlength{\partopsep}{0in}
-      \setlength{\leftmargin}{0.2in}}}{\end{list}}
-
-\newcommand{\education}[2]{
-{\bf #1}, #2 \\
-\vspace*{-.15in}
-}
-
-\newcommand{\job}[4]{
-{\bf #1} \hfill {\bf #2}\\
-{\em #3}: #4
-}
+\input{macros}
 
 \begin{document}
 
@@ -50,104 +18,51 @@
 
 \section{\sc Education}
 
-\education{University of California, Santa Barbara}{Santa Barbara, California}
-\begin{list3}
-\item Ph.D. in Physics, September 2014
-\item Advisor: John M. Martinis
-\item Research group webpage: \texttt{http://www.physics.ucsb.edu/~martinisgroup}
-\end{list3}
-
-\education{Yale University}{New Haven, Connecticut}
-\begin{list3}
-\item B.S. in Physics, May 2007 - with distinction
-\item Senior thesis on construction of dual well optical tweezers
-\end{list3}
-
-\education{Wootton High School}{Rockville, Maryland}
-\begin{list3}
-\item Graduated "Best Science Student"
-\end{list3}
-
+\input{education}
 
 \section{\sc Professional Experience}
 
-\job
-{Google}
-{2014-Present}
-{Quantum Electronics Engineer}
-{Research and development on adiabatic and gate-model quantum computers using superconducting devices.}
-
-\job
-{University of California Santa Barbara - Department of Physics}
-{2008-2014}
-{Graduate Student Researcher}
-{Design, test, and fabrication of superconducting electronic devices.
-World record superconducting quantum state readout:
-99\% accuracy in 120 nanoseconds.}
-
-\job
-{Army Research Lab}
-{summer 2003}
-{Intern}
-{Data processing/analysis code for 2D LADAR receiver array.}
-
-\job
-{ Goddard Space Flight Center}
-{summer 2002}
-{Intern}
-{Mapping Earth magnetosphere from IG-8 satellite data.}
-
+\input{experience}
 
 \section{\sc Skills}
 
-{\bf Microwave Engineering}\\
-\vspace*{-.15in}
-\begin{list4}
-\item Designed and tested 4-channel IQ demodulator (4 GHz - 8 GHz RF band) with digitally controlled IF gain.
-Used in Google quantum computing.
-\item Arbitrary waveform generation at GHz frequencies using custom FPGA controlled GHz DAC and IQ mixing
-\item Phase sensitive microwave pulse demodulation using custom FPGA controlled GHz ADC and IQ mixing
-\end{list4}
+\skill{Microwave Engineering}
+{
+  {Designed and tested 4-channel IQ demodulator (4 GHz - 8 GHz RF band) with digitally controlled IF gain. Used in Google quantum computing.},
+  {Arbitrary waveform generation at GHz frequencies using custom FPGA controlled GHz DAC and IQ mixing},
+  {Phase sensitive microwave pulse demodulation using custom FPGA controlled GHz ADC and IQ mixing}
+}
 
-{\bf Signal Processing and Noise}\\
-\vspace*{-.15in}
-\begin{list4}
-\item Noise measurement/characterization, DC-GHz.
-\item Deep knowledge of noise theory and application to real hardware.
-\item Produced noise course at Google, a set of technical documents covering the link between Fourier analysis and spectral density, aliasing, spectral leakage, 1-bit ADC signal processing, IQ demodulator noise, and quantum noise.
-\end{list4}
+\skill{Signal Processing and Noise}
+{
+  {Noise measurement/characterization, DC-GHz.},
+  {Deep knowledge of noise theory and application to real hardware.},
+  {Produced noise course at Google, a set of technical documents covering the link between Fourier analysis and spectral density, aliasing, spectral leakage, 1-bit ADC signal processing, IQ demodulator noise, and quantum noise.}
+}
 
-{\bf Physics/Math theory and calculation}\\
-\vspace*{-.15in}
-\begin{list4}
-\item I am exceptionally good at applying detailed calculation to real hardware systems.
-\end{list4}
+\skill{Physics/Math theory and calculation}
+{I am exceptionally good at applying detailed calculation to real hardware systems.}
 
 \pagebreak
 
-{\bf Programming}\\
-\vspace*{-.15in}
-\begin{list4}
-\item Developer for LabRAD project: open source asynchronous server based lab hardware and data management system. LabRAD is currently used in cutting edge research labs in at least fifteen labs in five countries.\\
-(\texttt{https://github.com/martinisgroup/pylabrad})
-\item Wrote control software (Python) for custom FPGA controlled two channel GHz ADC board used for phase sensitive microwave pulse demodulation.
-\item Creator of \emph{gateCompiler} pulse sequence compiler now in standard use in Google quantum computing effort.
-\item Creator and developer of python observer pattern library \\
-\quad \texttt{https://github.com/DanielSank/observed}.
-\end{list4}
+\skill{Programming}
+{
+  {Developer for LabRAD project: open source asynchronous server based lab hardware and data management system. LabRAD is currently used in cutting edge research labs in at least fifteen labs in five countries.\\\texttt{https://github.com/martinisgroup/pylabrad}},
+  {Wrote control software (Python) for custom FPGA controlled two channel GHz ADC board used for phase sensitive microwave pulse demodulation.},
+  {Creator of \emph{gateCompiler} pulse sequence compiler now in standard use in Google quantum computing effort.},
+  {Creator and developer of python observer pattern library \\ \quad \texttt{https://github.com/DanielSank/observed}.}
+}
 
-{\bf Microfabrication}\\
-\vspace*{-.15in}
-\begin{list4}
-\item Fabrication of superconducting phase and transmon qubit devices at UCSB Nanofabrication facility
-\item Tools: Optical lithography stepper, ICP etch, metal sputter deposition, PECVD
-\end{list4}
+\skill{Microfabrication}
+{
+  {Fabrication of superconducting phase and transmon qubit devices at UCSB Nanofabrication facility},
+  {Tools: Optical lithography stepper, ICP etch, metal sputter deposition, PECVD}
+}
 
-{\bf Cryogenics}\\
-\vspace*{-.15in}
-\begin{list4}
-\item Dilution and adiabatic demagnetization refrigerators
-\end{list4}
+\skill{Cryogenics}
+{
+  {Dilution and adiabatic demagnetization refrigerators}
+}
 
 \section{\sc Invited talks}
 \begin{list3}
@@ -179,7 +94,8 @@ Highest fraction of accepted answers out of all users.
 
 \section{\sc Honors and\\ Awards}
 \begin{list3}
-\item Accepted to Les Houches Summer School on "Quantum Machines" \hfill {\bf 2011}
+\item Manager bonus for encouraging and facilitating code quality \hfill {\bf 2015}
+\item Accepted to and attended Les Houches Summer School on ``Quantum Machines'' \hfill {\bf 2011}
 \item Yale University/Howard Hughes Medical Institute research fellow \hfill {\bf 2005}
 \item Yale University Office of the dean summer research fellow \hfill {\bf 2006}
 \item Wootton High School named "Best Science Student" \hfill {\bf 2003}
