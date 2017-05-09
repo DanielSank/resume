@@ -6,63 +6,25 @@
 \evensidemargin -.25in \textwidth=6.15in \itemsep=0in
 \parsep=0in
 
+\input{infos}
 \input{macros}
 
 \begin{document}
 
-\name{\huge Daniel T. Sank, Ph.D.\vspace*{.1in}}
-\address{408 Ellwood Beach Drive \#4 \\ Goleta, CA 93117}
-\address{\texttt{sank.daniel@gmail.com}}
+\name{\huge \nameval \vspace*{.1in}}
+\address{\addressval}
+\address{\texttt{\emailval}}
 
 \begin{resume}
 
 \section{\sc Education}
-
 \input{education}
 
 \section{\sc Professional Experience}
-
 \input{experience}
 
 \section{\sc Skills}
-
-\skill{Microwave Engineering}
-{
-  {Designed and tested 4-channel IQ demodulator (4 GHz - 8 GHz RF band) with digitally controlled IF gain. Used in Google quantum computing.},
-  {Arbitrary waveform generation at GHz frequencies using custom FPGA controlled GHz DAC and IQ mixing},
-  {Phase sensitive microwave pulse demodulation using custom FPGA controlled GHz ADC and IQ mixing}
-}
-
-\skill{Signal Processing and Noise}
-{
-  {Noise measurement/characterization, DC-GHz.},
-  {Deep knowledge of noise theory and application to real hardware.},
-  {Produced noise course at Google, a set of technical documents covering the link between Fourier analysis and spectral density, aliasing, spectral leakage, 1-bit ADC signal processing, IQ demodulator noise, and quantum noise.}
-}
-
-\skill{Physics/Math theory and calculation}
-{I am exceptionally good at applying detailed calculation to real hardware systems.}
-
-\pagebreak
-
-\skill{Programming}
-{
-  {Developer for LabRAD project: open source asynchronous server based lab hardware and data management system. LabRAD is currently used in cutting edge research labs in at least fifteen labs in five countries.\\\texttt{https://github.com/martinisgroup/pylabrad}},
-  {Wrote control software (Python) for custom FPGA controlled two channel GHz ADC board used for phase sensitive microwave pulse demodulation.},
-  {Creator of \emph{gateCompiler} pulse sequence compiler now in standard use in Google quantum computing effort.},
-  {Creator and developer of python observer pattern library \\ \quad \texttt{https://github.com/DanielSank/observed}.}
-}
-
-\skill{Microfabrication}
-{
-  {Fabrication of superconducting phase and transmon qubit devices at UCSB Nanofabrication facility},
-  {Tools: Optical lithography stepper, ICP etch, metal sputter deposition, PECVD}
-}
-
-\skill{Cryogenics}
-{
-  {Dilution and adiabatic demagnetization refrigerators}
-}
+\input{skills}
 
 \section{\sc Invited talks}
 \begin{list3}

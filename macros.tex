@@ -1,3 +1,5 @@
+\usepackage{enumitem}
+
 \newenvironment{list1}{
   \begin{list}{\ding{113}}{%
       \setlength{\itemsep}{0in}
@@ -24,21 +26,19 @@
       \setlength{\leftmargin}{0.2in}}}{\end{list}}
 
 \newcommand{\education}[2]{
-{\bf #1}, #2 \\
-\vspace*{-.15in}
+{\bf #1}, #2
 }
 
 \newcommand{\job}[4]{
-{\bf #1} \hfill {\bf #2}\\
-{\em #3}\\
+{\bf #1} \hfill {\bf #2} \newline
+{\em #3} \newline
 #4
 }
 
 \newcommand{\skill}[2]{
-\textbf{#1} \\
-\vspace*{-.15in}
-\begin{list4}
+\textbf{#1}
+\begin{itemize}[noitemsep]
 \foreach \x in {#2}
   {\item \x}
-\end{list4}
+\end{itemize}
 }
