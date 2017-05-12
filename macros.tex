@@ -25,20 +25,26 @@
       \setlength{\topsep}{0in} \setlength{\partopsep}{0in}
       \setlength{\leftmargin}{0.2in}}}{\end{list}}
 
-\newcommand{\education}[2]{
-{\bf #1}, #2
+\newcommand{\education}[4]{
+{\bf #1}, #2 \hfill \textbf{#3}
+\begin{list3}
+  \foreach \x in {#4}
+    {\item \x}
+\end{list3}
 }
 
 \newcommand{\job}[4]{
-{\bf #1} \hfill {\bf #2} \newline
-{\em #3} \newline
-#4
+{\bf #1} \hfill {\bf #2}
+\begin{list3}
+  \item \emph{#3}
+  \item #4
+\end{list3}
 }
 
 \newcommand{\skill}[2]{
 \textbf{#1}
-\begin{itemize}[noitemsep]
+\begin{list2}
 \foreach \x in {#2}
   {\item \x}
-\end{itemize}
+\end{list2}
 }
